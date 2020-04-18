@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Multiple CustomSelect should init component 1`] = `
+<div
+  class="custom-select-wrapper"
+>
+  <ul
+    class="custom-options"
+    role="listbox"
+    tabindex="0"
+  >
+    
+
+    <li
+      aria-selected="true"
+      class="custom-option active"
+      role="option"
+    >
+      One
+    </li>
+    <li
+      class="custom-option"
+      role="option"
+    >
+      Two
+    </li>
+    <li
+      class="custom-option"
+      role="option"
+    >
+      Three
+    </li>
+  </ul>
+  
+
+</div>
+`;
+
+exports[`Single CustomSelect should init component 1`] = `
+<div
+  class="custom-select-wrapper"
+>
+  <button
+    aria-haspopup="listbox"
+  >
+    One
+  </button>
+  
+
+  <ul
+    class="custom-options hidden"
+    role="listbox"
+    tabindex="-1"
+  >
+    
+
+    <li
+      aria-selected="true"
+      class="custom-option active"
+      role="option"
+    >
+      One
+    </li>
+    <li
+      class="custom-option"
+      role="option"
+    >
+      Two
+    </li>
+    <li
+      class="custom-option"
+      role="option"
+    >
+      Three
+    </li>
+  </ul>
+  
+
+</div>
+`;

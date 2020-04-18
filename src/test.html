@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function test(e) {
+        console.log(e);
+      }
+    </script>
+    <select onchange="test()">
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+
+    <select multiple onchange="test()">
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </body>
+</html>
