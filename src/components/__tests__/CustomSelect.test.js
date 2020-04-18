@@ -74,6 +74,7 @@ describe('Single CustomSelect', () => {
     const customSelect = new CustomSelect(select);
     customSelect.instance.customSelectWrapper.querySelector('li').click();
     expect(window.callMe).toBeCalled();
+    expect(select.value).toBe('One');
   });
 });
 
@@ -150,5 +151,6 @@ describe('Multiple CustomSelect', () => {
     const customSelect = new CustomSelect(select);
     customSelect.instance.customSelectWrapper.querySelector('li').click();
     expect(window.callMe).toBeCalled();
+    expect(select.value).toBe('One');
   });
 });
