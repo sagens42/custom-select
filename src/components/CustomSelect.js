@@ -96,10 +96,9 @@ export default class CustomSelect {
   }
 
   onClickOnOption(e) {
-    const prevActive = this.customSelectWrapper.querySelector('.custom-option.active');
     if (this.multiple) {
-      if (!e.metaKey && !e.ctrlKey && prevActive) {
-        this.deselectItem(prevActive);
+      if (!e.metaKey && !e.ctrlKey) {
+        this.deselectAllItems();
       }
       if (e.target.classList.contains('active')) {
         this.deselectItem(e.target);
@@ -107,6 +106,7 @@ export default class CustomSelect {
         this.selectItem(e.target);
       }
     } else {
+      const prevActive = this.customSelectWrapper.querySelector('.custom-option.active');
       if (!e.target.classList.contains('active')) {
         if (prevActive) {
           this.deselectItem(prevActive);
@@ -172,12 +172,16 @@ export default class CustomSelect {
             }
             this.selectItem(nextItem);
             this.keydownIndex = this.findIndexOfElement(nextItem);
+            e.preventDefault();
+            e.stopPropagation();
           }
         } else {
           const firstItem = this.customSelectWrapper.querySelector('li');
           if (firstItem) {
             this.selectItem(firstItem);
             this.keydownIndex = 0;
+            e.preventDefault();
+            e.stopPropagation();
           }
         }
     } else if ((e.which || e.keyCode) === 38) { // up
@@ -193,6 +197,8 @@ export default class CustomSelect {
             }
             this.selectItem(previousItem);
             this.keydownIndex = this.findIndexOfElement(previousItem);
+            e.preventDefault();
+            e.stopPropagation();
           }
         }
       } else if ((e.which || e.keyCode) === 9) { // tab

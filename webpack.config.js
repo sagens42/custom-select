@@ -36,5 +36,6 @@ module.exports = {
   ],
   devServer: {
     hot: true
-  }
+  },
+  devtool: 'none'
 };
